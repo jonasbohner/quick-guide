@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KINEXON COMPETE Vision · Setup Guide</title>
+<title>KINEXON COMPETE Vision · Onboarding Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -21,8 +21,8 @@
     --muted:#A0B4C8;          /* secondary text */
     --orange:#FF9600;
     --red:#E62445;
+    --yellow:#FFD23F;
     --green:#4FAD7A;
-    --yellow:#85AD4F;
     --display:'Titillium Web', sans-serif;
     --body:'Work Sans', sans-serif;
   }
@@ -373,6 +373,94 @@
   .reveal.in{opacity:1;transform:translateY(0);}
   @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none;} }
 
+  /* ---------- smartphone optimization ---------- */
+  /* no hover states on touch devices */
+  @media (hover:none){
+    .step-row:hover{transform:none;border-left-color:rgba(0,167,231,0.45);}
+    .option-card:hover{transform:none;box-shadow:none;border-color:var(--kx-line);}
+    .cta-banner:hover .cta-arrow{transform:none;}
+  }
+
+  @media (max-width:600px){
+    html{-webkit-text-size-adjust:100%;}
+    .wrap{padding:0 16px;}
+
+    /* top bar */
+    .topbar{padding:12px 0;}
+    .topbar .wrap{gap:10px;}
+    .brand{gap:11px;}
+    .brand .logo{height:26px;}
+    .brand .divider{height:18px;}
+    .brand .tag{font-size:10px;letter-spacing:0.12em;}
+
+    /* sticky step nav */
+    .stepnav .wrap{padding:8px 16px;gap:6px;}
+    .steppill{padding:7px 12px 7px 7px;font-size:11px;gap:7px;}
+    .steppill .dot{width:19px;height:19px;font-size:10.5px;}
+
+    /* hero */
+    .hero{padding:40px 0 36px;}
+    .hero::before{height:120px;bottom:-30px;}
+    .eyebrow{font-size:11.5px;margin-bottom:12px;}
+    h1.headline{font-size:clamp(30px,9vw,40px);margin:0 0 14px;}
+    .sub{font-size:16px;margin:0 0 28px;}
+
+    /* sections */
+    section.block{padding:38px 0;}
+    .section-head{gap:13px;margin-bottom:22px;}
+    .section-num{width:34px;height:34px;font-size:12.5px;}
+    .section-kicker{font-size:11px;margin-bottom:4px;}
+    h2.section-title{font-size:26px;}
+
+    /* court diagram — scroll horizontally so details stay readable */
+    .diagram-card{margin-bottom:26px;}
+    .diagram-head{padding:13px 16px;font-size:16px;gap:10px;}
+    .diagram-body{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .diagram-body img{min-width:560px;}
+
+    /* steps */
+    .steps-list{gap:10px;margin:0 0 28px;}
+    .step-row{padding:16px;gap:13px;}
+    .step-badge{width:26px;height:26px;font-size:12.5px;}
+    .step-text{font-size:15px;padding-top:1px;}
+
+    /* signal cards */
+    .signal-panel{gap:12px;}
+    .signal-card{padding:18px;}
+    .signal-title{font-size:12.5px;}
+    .signal-desc{font-size:14px;}
+
+    /* checklist */
+    .check-row{padding:16px 0;gap:13px;}
+    .check-text{font-size:15px;}
+
+    /* upload */
+    .option-grid{gap:14px;margin-bottom:20px;}
+    .option-card{padding:20px;}
+    .option-title{font-size:20px;margin:0 0 9px;}
+    .option-body{font-size:14.5px;}
+    .warning-banner{padding:16px;gap:12px;font-size:14.5px;}
+
+    /* footer */
+    .footer-block{padding:32px 0;}
+    .footer-title{font-size:19px;margin:0 0 16px;}
+    .footer-grid{gap:13px;}
+
+    /* cta + foot */
+    .cta-banner{padding:20px 0;}
+    .cta-banner .wrap{gap:14px;}
+    .cta-left b{font-size:17px;}
+    .cta-left span{font-size:13px;}
+    .cta-arrow{width:36px;height:36px;}
+    .foot{padding:28px 0 36px;}
+  }
+
+  @media (max-width:380px){
+    h1.headline{font-size:28px;}
+    .brand .tag{display:none;}
+    .cta-arrow{display:none;}
+  }
+
 </style>
 </head>
 <body>
@@ -400,7 +488,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">LabPano Pilot One · Quick Setup</span>
+      <span class="eyebrow">Labpano Pilot One · Quick Setup</span>
       <h1 class="headline">Record a Session,<br>Upload It, Done.</h1>
       <p class="sub">Everything you and your team need to set up, record and upload a KINEXON COMPETE Vision session with the Labpano Pilot One.</p>
 
@@ -533,6 +621,11 @@
         </div>
       </div>
 
+      <div class="warning-banner reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+        <div><b>Important:</b> keep the camera powered the whole time it's recording and uploading, or you could lose the footage.</div>
+      </div>
+
       <div class="option-grid reveal">
         <div class="option-card">
           <div class="option-eyebrow">Option 1</div>
@@ -544,11 +637,6 @@
           <div class="option-title">On-Demand Upload</div>
           <div class="option-body">No Wi-Fi? The recording is saved under "Manage Videos." Once you're back on Wi-Fi or Ethernet, open Manage Videos, select the session, and tap Upload.</div>
         </div>
-      </div>
-
-      <div class="warning-banner reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
-        <div><b>Important:</b> keep the camera powered the whole time it's recording and uploading, or you could lose the footage.</div>
       </div>
     </div>
   </section>
